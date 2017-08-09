@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue双向数据绑定</title>
+    <style>
+        .red{
+            background-color:palevioletred;
+            color: white;
+        }
+        .circle{
+            width:100px;
+            height: 100px;
+            background-color: #00B7FF;
+            border-radius:50%;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <input v-model="message"/>
+    <p v-bind:class="style">您输入的内容是{{message}}  {{message}} </p>
+    <div v-bind:class="style2" v-show="isShow"></div>
+</div>
+<script src="my-vue.js"></script>
+<script>
+          var myapp = new Vue({
+              el:"#app",
+              data:{
+                  message:'hello wangchan',
+                  style:'red',
+                  style2:'circle',
+                  isShow:true,
+                  numbers:[1,2,3,4,5],
+                  person:"wc"
+              }
+          })
+</script>
+</body>
+</html>
